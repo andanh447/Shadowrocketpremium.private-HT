@@ -1,0 +1,5 @@
+# LocketGold
+revenuecat = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts\$|subscribers\/[^/]+$),script-path=https://gist.githubusercontent.com/andanh447/cab4922da9756eb92935003bf53f9a17/raw/2ffde381ad417963693bf3e7444bce138fbbe646/locketgold.js,requires-body=true,max-size=-1,timeout=60
+deleteHeader = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts\$|subscribers),script-path=https://gist.githubusercontent.com/andanh447/cab4922da9756eb92935003bf53f9a17/raw/2ffde381ad417963693bf3e7444bce138fbbe646/locketgold.js,timeout=60
+
+[MITM]
