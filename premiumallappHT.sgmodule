@@ -1,5 +1,4 @@
 [General]
-skip-proxy = youtubei.googleapis.com⁠,⁠googlevideo.com⁠,www.youtube.com,s.youtube.com,youtubei.googleapis.com,spclient.wg.spotify.com⁠,⁠spclient.spotify.com,api-mobile.soundcloud.com⁠,us-central1-alight-creative.cloudfunctions.net⁠,api.picsart.com⁠,api-sub.meitu.com⁠,h5.xiuxiu.meitu.com,api.xiuxiu.meitu.com⁠,premium*.truecaller.com⁠,photos.adobe.io⁠,api-account.kinemasters.com,api.intsig.net,api.mr.pixocial.com⁠,newbeee-api.beautyplus.com⁠,user-snow-api.snow.me,api.revenuecat.com
 update-url = https://gist.githubusercontent.com/htien407/87dca793f265e2432eb3797b0fa2cb82/raw/d59d1102d53711fd672d8b7b8a0eedfc88400140/VIPDHT.conf
 
 [Rule]
