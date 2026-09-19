@@ -1,0 +1,11 @@
+#!name=Hypic Pro Unlock by Anh Yeu
+#!desc=Tự tay code mở khóa VIP cho Hypic và Xingtu
+#!author=Anh Yêu
+
+[Script]
+# Bắt các luồng mạng của Xingtu/Hypic và chạy file JavaScript
+hypic_vip = type=http-response,pattern=^https?:\/\/.*(snssdk|retouchpics)\.com\/.*,requires-body=1,max-size=0,script-path=[ĐƯỜNG_LINK_JS_CỦA_ANH]
+
+[MITM]
+# Phá vỡ mã hóa của các máy chủ Bytedance
+hostname = %APPEND% *.snssdk.com, *.retouchpics.com, *.faceu.mobi
