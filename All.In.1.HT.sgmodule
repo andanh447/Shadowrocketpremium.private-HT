@@ -6,7 +6,7 @@ skip-proxy = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12, localhost, *.local, lock
 bypass-tun = 10.0.0.0/8, 100.64.0.0/10, 127.0.0.0/8, 169.254.0.0/16, 172.16.0.0/12, 192.168.0.0/16, 224.0.0.0/4, 240.0.0.0/4
 
 [Rule]
-# === BẢO VỆ LOCKET GOLD CHÍNH CHỦ TỐI ĐA ===
+# === BẢO VỆ LOCKET GOLD CHÍNH CHỦ TỐI ĐA (CHỐNG MẤT 15S) ===
 DOMAIN-SUFFIX,api-revenuecat.com,DIRECT
 DOMAIN-SUFFIX,revenuecat.com,DIRECT
 DOMAIN-KEYWORD,locket,DIRECT
@@ -16,7 +16,7 @@ DOMAIN-SUFFIX,locket.camera,DIRECT
 DOMAIN-SUFFIX,buy.itunes.apple.com,DIRECT
 DOMAIN-SUFFIX,in-app-purchasing.apple.com,DIRECT
 
-# === THÔNG ĐƯỜNG CHO FIREBASE CỦA LOCKET (CHỐNG MẤT 15S) ===
+# === THÔNG ĐƯỜNG CHO FIREBASE CỦA LOCKET ===
 DOMAIN-SUFFIX,firebasestorage.googleapis.com,DIRECT
 DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com,DIRECT
 DOMAIN-SUFFIX,firebaselogging.googleapis.com,DIRECT
