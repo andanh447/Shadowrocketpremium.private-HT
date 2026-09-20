@@ -9,7 +9,6 @@ DOMAIN-SUFFIX,revenuecat.com,DIRECT
 DOMAIN-SUFFIX,app.analytics-services.com,DIRECT
 DOMAIN-SUFFIX,firebasestorage.googleapis.com,DIRECT
 DOMAIN-SUFFIX,region1.app-analytics-services.com,DIRECT
-DOMAIN-KEYWORD,locket,DIRECT
 
 # === QUY TẮC THÊM TỪ ẢNH 18 (NEXTDNS & APPLE) ===
 DOMAIN,captive.apple.com,DIRECT
@@ -141,10 +140,6 @@ Smallpdf解锁 = type=http-response,pattern=https://pro.smallpdf.com/pro/account
 
 # TOKCAM
 TOKAM = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyReceipt,requires-body=1,script-path=https://raw.githubusercontent.com/yqc007/QuantumultX/master/TokCamFProCrack.js
-
-# LocketGold
-revenuecat = type=http-response,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts\$|subscribers\/[^/]+$),script-path=https://raw.githubusercontent.com/andanh447/locketgolddocquyendht/refs/heads/main/locketgoldtest.js,requires-body=true,max-size=-1,timeout=60
-deleteHeader = type=http-request,pattern=^https:\/\/api\.revenuecat\.com\/.+\/(receipts\$|subscribers),script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/deleteHeader.js,timeout=60
 
 # === CÁC APP THÊM TỪ ẢNH TRƯỚC ===
 Photomath = type=http-response,pattern=https://lapi.photomath.net/v4/me,requires-body=1,script-path=https://raw.githubusercontent.com/deezertidal/private/master/js-backup/Crack/poh.js
