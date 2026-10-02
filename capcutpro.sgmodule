@@ -1,3 +1,11 @@
+#!name= All In 1 With ĐHT
+#!desc= crack mọi app premium vip pro
+#!author=andanh447
+#!homepage=https://note3s.top/notes/WM6212
+#!moduleUrl=https://raw.githubusercontent.com/andanh447/Shadowrocketpremium.private-HT/refs/heads/main/All.In.1.HT.sgmodule
+#!howtouse=shadowrocket ĐHT
+#Shadowrocket Configuration - ALL IN Đ_H_T
+
 # Shadowrocket: 2026-09-26 12:42:40
 [General]
 bypass-system = true
@@ -8,6 +16,41 @@ update-url = https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/m
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
 AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+DOMAIN,captive.apple.com,DIRECT
+DOMAIN,apple.dns.nextdns.io,DIRECT
+DOMAIN,linkip.nextdns.io,DIRECT
+DOMAIN,dns.nextdns.io,DIRECT
+DOMAIN-SUFFIX,nextdns.io,DIRECT
+DOMAIN,gdmf.apple.com,REJECT
+DOMAIN,crl.apple.com,REJECT
+DOMAIN,appledid.apple.com,REJECT
+DOMAIN,certs.apple.com,REJECT
+DOMAIN,valid.apple.com,REJECT
+DOMAIN,ppq.apple.com,REJECT
+DOMAIN,ocsp2.apple.com,REJECT
+DOMAIN,ocsp.apple.com,REJECT
+AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+DOMAIN-SUFFIX,admicro.vn,REJECT
+DOMAIN-SUFFIX,admicro1.vcmedia.vn,REJECT
+DOMAIN-SUFFIX,eclick.vn,REJECT
+DOMAIN-SUFFIX,ants.vn,REJECT
+DOMAIN-SUFFIX,ambientdigital.com.vn,REJECT
+DOMAIN-SUFFIX,vungle.com,REJECT
+DOMAIN-SUFFIX,inmobi.com,REJECT
+DOMAIN-SUFFIX,criteo.com,REJECT
+DOMAIN-SUFFIX,rubiconproject.com,REJECT
+DOMAIN-SUFFIX,pubmatic.com,REJECT
+DOMAIN-SUFFIX,branch.io,DIRECT
+DOMAIN-KEYWORD,facebook,DIRECT
+DOMAIN-KEYWORD,messenger,DIRECT
+DOMAIN-SUFFIX,facebook.com,DIRECT
+DOMAIN-SUFFIX,facebook.net,DIRECT
+DOMAIN-SUFFIX,fbcdn.net,DIRECT
+DOMAIN-SUFFIX,fbsbx.com,DIRECT
+DOMAIN-SUFFIX,fb.com,DIRECT
+DOMAIN-SUFFIX,fb.me,DIRECT
+DOMAIN-SUFFIX,messenger.com,DIRECT
 
 [URL Rewrite]
 # Chặn quảng cáo Google Video
