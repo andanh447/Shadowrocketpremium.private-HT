@@ -6,50 +6,7 @@
 #!howtouse=shadowrocket ĐHT
 #Shadowrocket Configuration - ALL IN Đ.H.T (htienz07)
 
-[Rule]
-AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
-DOMAIN,captive.apple.com,DIRECT
-DOMAIN,apple.dns.nextdns.io,DIRECT
-DOMAIN,linkip.nextdns.io,DIRECT
-DOMAIN,dns.nextdns.io,DIRECT
-DOMAIN-SUFFIX,nextdns.io,DIRECT
-DOMAIN,gdmf.apple.com,REJECT
-DOMAIN,crl.apple.com,REJECT
-DOMAIN,appledid.apple.com,REJECT
-DOMAIN,certs.apple.com,REJECT
-DOMAIN,valid.apple.com,REJECT
-DOMAIN,ppq.apple.com,REJECT
-DOMAIN,ocsp2.apple.com,REJECT
-DOMAIN,ocsp.apple.com,REJECT
-AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN-SUFFIX,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
-DOMAIN-SUFFIX,admicro.vn,REJECT
-DOMAIN-SUFFIX,admicro1.vcmedia.vn,REJECT
-DOMAIN-SUFFIX,eclick.vn,REJECT
-DOMAIN-SUFFIX,ants.vn,REJECT
-DOMAIN-SUFFIX,ambientdigital.com.vn,REJECT
-DOMAIN-SUFFIX,vungle.com,REJECT
-DOMAIN-SUFFIX,inmobi.com,REJECT
-DOMAIN-SUFFIX,criteo.com,REJECT
-DOMAIN-SUFFIX,rubiconproject.com,REJECT
-DOMAIN-SUFFIX,pubmatic.com,REJECT
-DOMAIN-SUFFIX,branch.io,DIRECT
-DOMAIN-KEYWORD,facebook,DIRECT
-DOMAIN-KEYWORD,messenger,DIRECT
-DOMAIN-SUFFIX,facebook.com,DIRECT
-DOMAIN-SUFFIX,facebook.net,DIRECT
-DOMAIN-SUFFIX,fbcdn.net,DIRECT
-DOMAIN-SUFFIX,fbsbx.com,DIRECT
-DOMAIN-SUFFIX,fb.com,DIRECT
-DOMAIN-SUFFIX,fb.me,DIRECT
-DOMAIN-SUFFIX,messenger.com,DIRECT
-# Shadowrocket: 2026-10-03 18:49:29
-[General]
-bypass-system = true
-skip-proxy = *.local, *.crashlytics.com
-tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
-update-url = https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf
+
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
