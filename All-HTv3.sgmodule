@@ -4,14 +4,7 @@
 #!homepage=https://note3s.top/notes/WM6212
 #!moduleUrl=https://raw.githubusercontent.com/andanh447/Shadowrocketpremium.private-HT/refs/heads/main/All-HTv3.sgmodule
 #!howtouse=shadowrocket ĐHT
-#Shadowrocket Configuration - ALL IN Đ_H_T
-
-# Shadowrocket: 2026-09-26 12:42:40
-[General]
-bypass-system = true
-skip-proxy = *.local, *.crashlytics.com
-tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
-update-url = https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/All_In_One.conf
+#Shadowrocket Configuration - ALL IN Đ.H.T (htienz07)
 
 [Rule]
 AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
