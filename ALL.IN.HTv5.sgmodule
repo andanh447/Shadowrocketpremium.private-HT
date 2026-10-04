@@ -6,36 +6,32 @@
 #!howtouse=shadowrocket ĐHT
 #Shadowrocket Configuration - ALL IN Đ.H.T (htienz07)
 
+
 [General]
-dns-server = https://dns.nodns.vn/dns-query
+dns-server = https://dns.nextdns.io/797d97/tiendh
 update-url = https://raw.githubusercontent.com/andanh447/Shadowrocketpremium.private-HT/refs/heads/main/ALL_IN_HTV4.sgmodule
+tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
 [Rule]
-AND,((DOMAIN-SUFFIX,googlevideo.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,youtubei.googleapis.com),(PROTOCOL,UDP)),REJECT
+# Chặn UDP RevenueCat để chống rớt Locket Gold
+AND,((DOMAIN,api.revenuecat.com),(PROTOCOL,UDP)),REJECT
+AND,((DOMAIN,api.rc-backup.com),(PROTOCOL,UDP)),REJECT
+DOMAIN-SUFFIX,revenuecat.com,DIRECT
+
+# Cho phép NextDNS và Apple hoạt động mượt mà không bị kẹt
 DOMAIN,captive.apple.com,DIRECT
 DOMAIN,apple.dns.nextdns.io,DIRECT
 DOMAIN,linkip.nextdns.io,DIRECT
 DOMAIN,dns.nextdns.io,DIRECT
 DOMAIN-SUFFIX,nextdns.io,DIRECT
-DOMAIN,gdmf.apple.com,REJECT
-DOMAIN,crl.apple.com,REJECT
-DOMAIN,appledid.apple.com,REJECT
-DOMAIN,certs.apple.com,REJECT
-DOMAIN,valid.apple.com,REJECT
-DOMAIN,ppq.apple.com,REJECT
-DOMAIN,ocsp2.apple.com,REJECT
-DOMAIN,ocsp.apple.com,REJECT
-DOMAIN-SUFFIX,admicro.vn,REJECT
-DOMAIN-SUFFIX,admicro1.vcmedia.vn,REJECT
-DOMAIN-SUFFIX,eclick.vn,REJECT
-DOMAIN-SUFFIX,ants.vn,REJECT
-DOMAIN-SUFFIX,ambientdigital.com.vn,REJECT
-DOMAIN-SUFFIX,vungle.com,REJECT
-DOMAIN-SUFFIX,inmobi.com,REJECT
-DOMAIN-SUFFIX,criteo.com,REJECT
-DOMAIN-SUFFIX,rubiconproject.com,REJECT
-DOMAIN-SUFFIX,pubmatic.com,REJECT
+
+# Chặn mã độc và quảng cáo bằng 1Hosts Lite
+RULE-SET,https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/domains.wildcards,REJECT
+
+# Các quy tắc Direct cơ bản
+DOMAIN-SUFFIX,githubassets.com,DIRECT
+DOMAIN-SUFFIX,githubusercontent.com,DIRECT
+DOMAIN-SUFFIX,gov.vn,DIRECT
 DOMAIN-SUFFIX,branch.io,DIRECT
 DOMAIN-KEYWORD,facebook,DIRECT
 DOMAIN-KEYWORD,messenger,DIRECT
@@ -46,10 +42,8 @@ DOMAIN-SUFFIX,fbsbx.com,DIRECT
 DOMAIN-SUFFIX,fb.com,DIRECT
 DOMAIN-SUFFIX,fb.me,DIRECT
 DOMAIN-SUFFIX,messenger.com,DIRECT
-RULE-SET,https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/domains.wildcards,REJECT
-DOMAIN-SUFFIX,githubassets.com,DIRECT
-DOMAIN-SUFFIX,githubusercontent.com,DIRECT
-DOMAIN-SUFFIX,gov.vn,DIRECT
+
+# Chặn các trình quảng cáo app phổ biến
 DOMAIN-SUFFIX,admob.com,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
 DOMAIN-SUFFIX,doubleclick.net,REJECT
@@ -58,10 +52,12 @@ DOMAIN-SUFFIX,google-analytics.com,REJECT
 DOMAIN-SUFFIX,applovin.com,REJECT
 DOMAIN-SUFFIX,applvn.com,REJECT
 DOMAIN-SUFFIX,unityads.unity3d.com,REJECT
+DOMAIN-SUFFIX,vungle.com,REJECT
 DOMAIN-SUFFIX,ironsrc.com,REJECT
 DOMAIN-SUFFIX,supersonicads.com,REJECT
 DOMAIN-SUFFIX,chartboost.com,REJECT
 DOMAIN-SUFFIX,adcolony.com,REJECT
+DOMAIN-SUFFIX,inmobi.com,REJECT
 DOMAIN-SUFFIX,liftoff.io,REJECT
 DOMAIN-SUFFIX,tapjoy.com,REJECT
 DOMAIN-SUFFIX,appsflyer.com,REJECT
@@ -110,7 +106,7 @@ spotify-json = type=http-request,pattern=^https:\/\/spclient\.wg\.spotify\.com\/
 spotify-proto = type=http-response,pattern=^https:\/\/spclient\.wg\.spotify\.com\/(bootstrap\/v1\/bootstrap|user-customization-service\/v1\/customize)$,requires-body=1,binary-body-mode=1,max-size=0,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/spotify-proto.js,script-update-interval=0
 
 # SoundCloud Go+
-SoundCloudGo+ = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/SoundCloudGoPlus.js
+SoundCloudGo+ = type=http-response,pattern=https://api-mobile.soundcloud.com/configuration/ios,requires-body=1,script-path=https://raw.githubusercontent.com/Marol62926/MarScrpt/main/soundcloud.js
 
 # VSCO
 VSCO = type=http-request,pattern=^https://api.revenuecat.com/.+/(receipts$|subscribers/?(.*?)*$),script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/VSCO.js,requires-body=true,timeout=60
@@ -154,7 +150,7 @@ iTunes = type=http-response,pattern=^https?:\/\/buy\.itunes\.apple\.com\/verifyR
 Snow = type=http-response,pattern=^https?:\/\/user-snow-api\.snow\.me\/v\d+\/purchase\/subscription\/subscriber\/status,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/Snow.js,requires-body=true,max-size=-1,timeout=60
 
 # Meitu
-Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d+\/(h\d+\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/duyvinh09/Module_IOS/refs/heads/main/js/MeiTuXiuXiu.js
+Meitu = type=http-response,pattern=^https?:\/\/(h5|api)\.xiuxiu\.meitu\.com\/v\d+\/(h\d+\/vip|vip|user)\/,requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/MeiTuXiuXiu.js
 
 # Chic
 Chic = type=http-response,pattern=^https:\/\/api-sub\.meitu\.com\/v2\/user\/vip_info\.json,requires-body=1,script-path=https://raw.githubusercontent.com/89996462/Quantumult-X/main/ycdz/Chic.js
