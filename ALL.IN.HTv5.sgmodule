@@ -6,29 +6,57 @@
 #!howtouse=shadowrocket ĐHT
 #Shadowrocket Configuration - ALL IN Đ.H.T (htienz07)
 
-
 [General]
 dns-server = https://dns.nextdns.io/797d97/tiendh
 update-url = https://raw.githubusercontent.com/andanh447/Shadowrocketpremium.private-HT/refs/heads/main/ALL_IN_HTV4.sgmodule
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
-[Rule]
-# Chặn UDP RevenueCat để chống rớt Locket Gold
-AND,((DOMAIN,api.revenuecat.com),(PROTOCOL,UDP)),REJECT
-AND,((DOMAIN,api.rc-backup.com),(PROTOCOL,UDP)),REJECT
-DOMAIN-SUFFIX,revenuecat.com,DIRECT
+# 1. NHÓM MẠNG NỘI BỘ & HOTSPOT (Ngăn vòng lặp, giảm tải CPU - Phải ở trên cùng)
+IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,172.20.10.0/24,DIRECT,no-resolve
+IP-CIDR,192.168.0.0/16,DIRECT,no-resolve
+IP-CIDR,10.0.0.0/8,DIRECT,no-resolve
+IP-CIDR,172.16.0.0/12,DIRECT,no-resolve
+IP-CIDR,240.0.0.0/4,DIRECT,no-resolve
+IP-CIDR,224.0.0.0/4,REJECT,no-resolve
+IP-CIDR,255.255.255.255/32,REJECT,no-resolve
 
-# Cho phép NextDNS và Apple hoạt động mượt mà không bị kẹt
+# 2. ÉP GIAO THỨC & CHỐNG NGHẼN BĂNG THÔNG TỪ MÁY PHỤ (Hạ nhiệt triệt để)
+AND,((PROTOCOL,UDP),(DEST-PORT,443)),REJECT
+DOMAIN-SUFFIX,windowsupdate.com,REJECT
+DOMAIN-SUFFIX,delivery.mp.microsoft.com,REJECT
+DOMAIN-SUFFIX,update.microsoft.com,REJECT
+DOMAIN-KEYWORD,torrent,REJECT
+DOMAIN-KEYWORD,tracker,REJECT
+
+# 3. HỆ THỐNG CƠ BẢN & MÁY CHỦ THỜI GIAN
+AND,((PROTOCOL,UDP),(DEST-PORT,123)),DIRECT
 DOMAIN,captive.apple.com,DIRECT
+DOMAIN-SUFFIX,pool.ntp.org,DIRECT
+DOMAIN-SUFFIX,time.apple.com,DIRECT
+DOMAIN-SUFFIX,time.windows.com,DIRECT
+
+# 4. CHẶN APPLE KIỂM TRA CHỨNG CHỈ (Chống thu hồi app ngoài)
+DOMAIN,gdmf.apple.com,REJECT
+DOMAIN,crl.apple.com,REJECT
+DOMAIN,appledid.apple.com,REJECT
+DOMAIN,certs.apple.com,REJECT
+DOMAIN,valid.apple.com,REJECT
+DOMAIN,ppq.apple.com,REJECT
+DOMAIN,ocsp2.apple.com,REJECT
+DOMAIN,ocsp.apple.com,REJECT
+
+# 5. TÊN MIỀN LOCKET CHÍNH CHỦ (Load ảnh siêu nhanh, nhận diện Gold mượt mà)
+DOMAIN-SUFFIX,revenuecat.com,DIRECT
+DOMAIN-SUFFIX,rc-backup.com,DIRECT
+DOMAIN-SUFFIX,locket.camera,DIRECT
+DOMAIN-SUFFIX,firebasestorage.googleapis.com,DIRECT
+
+# 6. DỊCH VỤ NEXTDNS & CÁC TRANG ƯU TIÊN ĐI THẲNG (Không qua lọc)
 DOMAIN,apple.dns.nextdns.io,DIRECT
 DOMAIN,linkip.nextdns.io,DIRECT
 DOMAIN,dns.nextdns.io,DIRECT
 DOMAIN-SUFFIX,nextdns.io,DIRECT
-
-# Chặn mã độc và quảng cáo bằng 1Hosts Lite
-RULE-SET,https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/domains.wildcards,REJECT
-
-# Các quy tắc Direct cơ bản
 DOMAIN-SUFFIX,githubassets.com,DIRECT
 DOMAIN-SUFFIX,githubusercontent.com,DIRECT
 DOMAIN-SUFFIX,gov.vn,DIRECT
@@ -42,8 +70,11 @@ DOMAIN-SUFFIX,fbsbx.com,DIRECT
 DOMAIN-SUFFIX,fb.com,DIRECT
 DOMAIN-SUFFIX,fb.me,DIRECT
 DOMAIN-SUFFIX,messenger.com,DIRECT
+DOMAIN-SUFFIX,app.analytics-services.com,DIRECT
+DOMAIN-SUFFIX,region1.app-analytics-services.com,DIRECT
 
-# Chặn các trình quảng cáo app phổ biến
+# 7. CHẶN QUẢNG CÁO & THEO DÕI (Tracking / Ads / Analytics ngầm)
+RULE-SET,https://raw.githubusercontent.com/badmojr/1Hosts/master/Lite/domains.wildcards,REJECT
 DOMAIN-SUFFIX,admob.com,REJECT
 DOMAIN-SUFFIX,googlesyndication.com,REJECT
 DOMAIN-SUFFIX,doubleclick.net,REJECT
@@ -65,10 +96,13 @@ DOMAIN-SUFFIX,adjust.com,REJECT
 DOMAIN-SUFFIX,kochava.com,REJECT
 DOMAIN-SUFFIX,umeng.com,REJECT
 DOMAIN-SUFFIX,crashlytics.com,REJECT
-DOMAIN-SUFFIX,app-measurement.com,REJECT
 DOMAIN-SUFFIX,hotjar.com,REJECT
 DOMAIN-SUFFIX,mixpanel.com,REJECT
 DOMAIN-SUFFIX,rayjump.com,REJECT
+DOMAIN-SUFFIX,firebaseremoteconfig.googleapis.com,REJECT
+DOMAIN-SUFFIX,oy24bn.launches.appflyerssdk.com,REJECT
+DOMAIN-SUFFIX,app-measurement.com,REJECT
+DOMAIN-SUFFIX,firebaselogging.googleapis.com,REJECT
 
 [URL Rewrite]
 # Chặn quảng cáo Google Video
