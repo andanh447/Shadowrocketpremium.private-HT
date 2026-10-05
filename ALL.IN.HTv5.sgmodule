@@ -11,6 +11,7 @@ dns-server = https://dns.nextdns.io/797d97/tiendh
 update-url = https://raw.githubusercontent.com/andanh447/Shadowrocketpremium.private-HT/refs/heads/main/ALL_IN_HTV4.sgmodule
 tun-excluded-routes = 192.168.0.0/16, 10.0.0.0/8, 172.16.0.0/12
 
+[Rule]
 # 1. NHÓM MẠNG NỘI BỘ & HOTSPOT (Ngăn vòng lặp, giảm tải CPU - Phải ở trên cùng)
 IP-CIDR,127.0.0.0/8,DIRECT,no-resolve
 IP-CIDR,172.20.10.0/24,DIRECT,no-resolve
